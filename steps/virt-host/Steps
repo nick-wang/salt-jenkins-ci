@@ -1,0 +1,43 @@
+1. /etc/chrony.conf
+   systemctl enable chronyd.service
+
+   # Add NTP server to /etc/chrony.conf
+   sed -i '$aserver time.nist.gov iburst'
+
+   systemctl restart chronyd.service
+
+   * # sync from NTP server
+   chronyc -a makestep
+
+   * # Check NTP sync status
+   chronyc sources -v
+  
+2. Packages:
+   java (java-9-openjdk, javapackages-tools, java-9-openjdk-headless)
+   python3-PyYAML
+   nmap
+   python3-setuptools
+   python3-psutil
+   libvirt
+   (qemu-kvm)
+   virt-manager
+   git-core
+
+   # easy_install junit-xml
+     junit-xml
+
+
+3. Modify /etc/ssh/ssh_config, add one line:
+   StrictHostKeyChecking no
+
+4. Create a directory for storing vm images.
+   Like /mnt/vm/xxxxx
+   link the default vm create location to /mnt/vm
+
+5. service libvirtd enabled, restart
+
+5. br0, network?
+
+6. mail?
+
+7. (manually?) Add to server node in web?

@@ -1,0 +1,43 @@
+Test on SLE12-SP3:
+
+#prepare:
+Install git-core?
+        salt
+        jenkins
+        https://download.opensuse.org/repositories/devel:/tools:/building/SLE_12_SP3/
+
+1. Add pkg "jenkins" repo:
+  https://download.opensuse.org/repositories/devel:/tools:/building/openSUSE_Factory/
+
+2. Jenkins service:
+   start, enabled
+   # systemctl status jenkins seems malfunction, until /etc/init.d/jenkins restart
+
+3. (manually?) Jenkins server admin passwd in file:
+  /var/lib/jenkins/secrets/initialAdminPassword
+
+   # Then it will take time to install jenkins plugins
+
+package:
+   git-core
+
+4. /etc/chrony.conf
+   systemctl enable chronyd.service
+
+   # Add NTP server to /etc/chrony.conf
+   sed -i '$aserver time.nist.gov iburst'
+
+   systemctl restart chronyd.service
+
+   * # sync from NTP server
+   chronyc -a makestep
+
+   * # Check NTP sync status
+   chronyc sources -v
+
+5. mail?
+
+6. Jenkins file? including jobs?
+
+4. (Make sure firewalld is off)
+
