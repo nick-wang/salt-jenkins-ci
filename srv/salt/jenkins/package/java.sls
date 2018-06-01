@@ -1,4 +1,4 @@
-python3-pkg:
+java-pkg:
   pkg.installed:
     - names:
       - java-9-openjdk

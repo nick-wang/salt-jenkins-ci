@@ -1,0 +1,5 @@
+1. Use below command to test:
+	salt '*' state.highstate test=True
+
+2. Use below command to sync code:
+	rsync -avz root@<IP>:/home/nwang/Source-code/git/other/salt/salt-jenkins-ci.git/srv/salt /srv/

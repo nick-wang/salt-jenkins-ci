@@ -1,6 +1,6 @@
 include:
-  - jenkins.packages.git
-  - jenkins.packages.java
-  - jenkins.packages.python3
-  - jenkins.packages.jenkins
-  - jenkins.packages.tools
+  - jenkins.package.git
+  - jenkins.package.java
+  - jenkins.package.python3
+  - jenkins.package.jenkins
+  - jenkins.package.tools
