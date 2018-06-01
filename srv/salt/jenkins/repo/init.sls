@@ -1,0 +1,2 @@
+include:
+  - jenkins.repo.factory

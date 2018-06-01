@@ -1,3 +1,3 @@
 include:
-  - virt.pkg
-  - virt.service
+  - jenkins.virt.pkg
+  - jenkins.virt.service
